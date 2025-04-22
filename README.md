@@ -1,23 +1,16 @@
 # SC-IBSR
 
-# CMIC-Retrieval
-Code for **Cross-modal Contrastive Learning with a Style-mixed Bridge for Single Image 3D Shape Retrieval**.  **IPM 2024.**
+Code for **Cross-modal Contrastive Learning with a Style-mixed Bridge for Single Image 3D Shape Retrieval**.  **TOMM 2024.**
 
 ![Overview](/images/teaser.png)
 
-
-
 ## Introduction
 
-In this work, we tackle the problem of single image-based 3D shape retrieval (IBSR), where we seek to find the most matched shape of a given single 2D image from a shape repository. Most of the existing works  learn to embed 2D images and 3D shapes into a common feature space and perform metric learning using a triplet loss. Inspired by the great success in recent contrastive learning works on self-supervised  representation learning, we propose a novel IBSR pipeline leveraging contrastive learning. We note that adopting such cross-modal contrastive learning between 2D images and 3D shapes into IBSR tasks is non-trivial and challenging: contrastive learning requires very strong data augmentation in constructed positive pairs to learn the feature invariance, whereas traditional metric learning works do not have this requirement. However, object shape and appearance are entangled in 2D query images, thus making the learning task more difficult than contrasting single-modal data. To mitigate the challenges, we propose to use multi-view grayscale rendered images from the 3D shapes as a shape representation. We then introduce a strong data augmentation technique based on color transfer, which can significantly but naturally change the appearance of the query image, effectively satisfying the need for contrastive learning. Finally, we propose to incorporate a novel category-level contrastive loss that helps distinguish similar objects from different categories, in addition to classic instance-level contrastive loss. Our experiments demonstrate that our approach achieves the best performance on all the three popular IBSR benchmarks, including Pix3D, Stanford Cars, and Comp Cars, outperforming the previous state-of-the-art from 4% - 15% on retrieval accuracy.
-
-
+Image-based 3D shape retrieval (IBSR) is a cross-modal matching task which searches similar shapes from a 3D repository using a natural image. Continuous attention has been paid to this topic, such as joint embedding, adversarial learning, and contrastive learning. Modality gap and diversity of instance similarities are two obstacles for accurate and fine-grained cross-modal matching. To overcome the two obstacles, we propose a style-mixed contrastive learning method (SC-IBSR). On one hand, we propose a style transition module to mix the styles of images and rendered shape views to form an intermediate style and inject it into image contents. The obtained style-mixed image features serve as a bridge for later contrastive learning in order to alleviate the modality gap. On the other hand, the proposed strategy of fine-grained consistency constraint aims at cross-domain contrast and considers the different importance of negative (positive) samples. Extensive experiments demonstrate the superiority of the style-mixed cross-modal contrastive learning on both the instance-level retrieval benchmark (i.e., Pix3D, Stanford Cars, and Comp Cars that annotate shapes to images), and the unsupervised category-level retrieval benchmark (i.e., MI3DOR-1 and MI3DOR-2 with unlabeled 3D shapes). Moreover, experiments are conducted on Office-31 dataset to validate the generalization capability of our method.
 
 ## About this repository
 
 This repository provides **data**, **pre-trained models** and **code**.
-
-
 
 ## Installation
 ```zsh
