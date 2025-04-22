@@ -77,5 +77,8 @@ cd SC-IBSR/Category-level
 # all codes are test under a single Nvidia RTX3090, Ubuntu 18.04
 # training
 python train_image_sag_CO2_con.py
-# remember to modify the path of the dataset
 
+# testing
+python test.py
+
+# data analysis
