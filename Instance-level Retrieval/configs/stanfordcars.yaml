@@ -1,0 +1,32 @@
+data:
+  name: stanfordcars 
+  num_workers: 8
+  batch_size: 30 
+  root_dir: ./data
+  mask_dir: mask
+  images_dir: img
+  render_path: rendering_stanfordcars.pkl
+  pix_size: 224
+  view_num: 12
+  training_json: StanfordCars_train.json
+  test_json: StanfordCars_test.json
+  tau: 0.1
+
+
+trainer:
+  epochs: 400
+  seed: 3104
+
+
+models:
+  z_dim: 128
+  pre_trained_path: './pre_trained/stanfordcars.pt'
+  pre_train_resnet_root: './pretrained_resnet'
+  save_root: './'
+
+
+setting:
+  is_training: True
+  is_aug: True # for data augmentation, flip, random crop...
+  is_color: True # for data augmentation: color transfer
+  is_from_scratch: True
