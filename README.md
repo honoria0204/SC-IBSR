@@ -79,6 +79,8 @@ cd SC-IBSR/Category-level
 python train_image_sag_CO2_con.py
 
 # testing
+# generate .mat file of the test samples
 python test.py
 
-# data analysis
+# data analysis with Matlab
+test.m 
