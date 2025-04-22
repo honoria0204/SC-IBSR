@@ -2,7 +2,7 @@
 
 Code for **Cross-modal Contrastive Learning with a Style-mixed Bridge for Single Image 3D Shape Retrieval**.  **TOMM 2024.**
 
-![Overview](/images/teaser.png)
+![Overview](/images/method.png)
 
 ## Introduction
 
