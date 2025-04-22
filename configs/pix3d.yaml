@@ -1,0 +1,32 @@
+data:
+  name: pix3d
+  num_workers: 8
+  batch_size: 30 
+  root_dir: ./data
+  mask_dir: mask_ocrnet
+  images_dir: img
+  render_path: rendering_pix3d.pkl
+  pix_size: 224
+  view_num: 12
+  training_json: pix3d_train.json
+  test_json: pix3d_test.json
+  tau: 0.1
+
+
+trainer:
+  epochs: 400 
+  seed: 3104
+
+
+models:
+  z_dim: 128
+  pre_trained_path: './pre_trained/pix3d.pt'
+  pre_train_resnet_root: './pretrained_resnet'
+  save_root: './save'
+
+
+setting:
+  is_training: True
+  is_aug: True # for data augmentation, flip, random crop...
+  is_color: True # for data augmentation: color transfer
+  is_from_scratch: True
