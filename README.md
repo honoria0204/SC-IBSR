@@ -1,4 +1,4 @@
-# SC-IBSR
+# SC-IBSR: Style-mixed Contrastive Learning for Image-based 3D Shape Retrieval
 
 Code for **Cross-modal Contrastive Learning with a Style-mixed Bridge for Single Image 3D Shape Retrieval**.  **TOMM 2024.**
 
