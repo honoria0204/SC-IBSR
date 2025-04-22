@@ -21,6 +21,7 @@ conda activate ibsr_jittor
 
 # jittor installation
 python3.7 -m pip install jittor==1.3.2
+python3.7 -m jittor_utils.install_cuda
 ## testing jittor
 ### if errors appear, you can follow the instructions of jittor to fix them.
 python3.7 -m jittor.test.test_example
@@ -33,22 +34,24 @@ pip install scikit-learn
 pip install matplotlib
 pip install scikit-image
 pip install argparse
+pip install easydl
+pip install scipy
 ```
 
 
 
 ## How to use
-
+## For instance-level retrieval
 ```zsh
 # download pre-trained models, data and official ResNet pre-trained models from this links:
 https://1drv.ms/u/s!Ams-YJGtFnP7mTQOACYHco1s2gXE?e=c87UnV
 
-# put the unzip folder pre_trained, pretrained_resnet, data under IBSR_jittor/code
-cd IBSR_jittor/code
+# put the unzip folder pre_trained, pretrained_resnet, data under SC-IBSR/Instance-level
+cd SC-IBSR/Instance-level
 
-# all codes are test under a single Nvidia RTX3090, Ubuntu 20.04
+# all codes are test under a single Nvidia RTX3090, Ubuntu 18.04
 # training
-python RetrievalNet.py --config ./configs/pix3d.yaml
+python RetrievalNet_sag_con.py --config ./configs/pix3d.yaml
 
 # testing
 python RetrievalNet_test.py --config ./configs/pix3d.yaml --mode simple
@@ -63,4 +66,16 @@ python RetrievalNet_test.py --config ./configs/pix3d.yaml --mode shapenet
 # For model_std_bin128, please refer to https://www.patrickmin.com/viewvox/ for more information.
 ```
 
-## Updates
+## For category-level retrieval
+```zsh
+# download MI3DOR datasets from this links:
+https://github.com/tianbao-li/MI3DOR
+
+# put the unzip folder data under SC-IBSR/Category-level
+cd SC-IBSR/Category-level
+
+# all codes are test under a single Nvidia RTX3090, Ubuntu 18.04
+# training
+python train_image_sag_CO2_con.py
+# remember to modify the path of the dataset
+
